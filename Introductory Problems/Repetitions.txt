@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    string s;
+    cin>>s;
+    
+    int n = s.size();
+    int maxLen=1;
+    int len=1;
+    for(int i=1; i<n; i++){
+        if(s[i-1] == s[i]){
+            len++;
+        }
+        else{
+            maxLen = max(maxLen, len);
+            len=1;
+        }
+    }
+    maxLen = max(maxLen, len);
+    cout<<maxLen;
+    
+    return 0;
+}
